@@ -5,7 +5,9 @@ import {Component} from '@angular/core';
   templateUrl: './warning-alert.component.html',
   styles: [`
     h3 {
-      color: red;
+      padding: 20px;
+      background-color: mistyrose;
+      border: 1px solid red;
     }
   `]
 })
