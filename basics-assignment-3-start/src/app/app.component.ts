@@ -11,7 +11,7 @@ export class AppComponent {
 
   displayDetails() {
     this.displayParagraph = !this.displayParagraph;
-    this.array.push(this.array.length + 1);
+    this.array.push(new Date());
   }
 
 }

@@ -11,9 +11,10 @@
       <hr>
       <button class="btn btn-primary" (click)="displayDetails()">Display Details</button>
       <p *ngIf="displayParagraph">Secret Password = tuna</p>
-      <div *ngFor="let item of array"
-        [ngStyle]="{backgroundColor: item >= 5 ? 'blue' : 'transparent'}"
-        [ngClass]="{'white-text': item >= 5 }"
+      <!-- index: expression that gives you access to the index of the current iteration -->
+      <div *ngFor="let item of array; let i = index"
+        [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
+        [ngClass]="{'white-text': i >= 4 }"
         >{{ item }}
       </div>
     </div>
