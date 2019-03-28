@@ -9,7 +9,9 @@ import {Recipe} from '../recipe.model';
 export class RecipeListComponent implements OnInit {
   recipes: Recipe[] = [
     new Recipe('A Test Recipe', 'This is a simple test description',
-      'https://pxhere.com/en/photo/604134')
+      'https://c.pxhere.com/photos/8b/0f/food_meat_recipe_power_pork_dishes-604134.jpg!d'),
+    new Recipe('A Test Recipe', 'This is a simple test description',
+      'https://c.pxhere.com/photos/8b/0f/food_meat_recipe_power_pork_dishes-604134.jpg!d')
   ];
 
   constructor() { }
