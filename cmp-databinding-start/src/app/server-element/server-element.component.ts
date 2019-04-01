@@ -1,6 +1,8 @@
 import {
   AfterContentChecked,
   AfterContentInit,
+  AfterViewChecked,
+  AfterViewInit,
   Component,
   DoCheck,
   Input,
@@ -16,7 +18,8 @@ import {
   styleUrls: ['./server-element.component.css'],
   encapsulation: ViewEncapsulation.Emulated
 })
-export class ServerElementComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked {
+export class ServerElementComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked,
+  AfterViewInit, AfterViewChecked {
   // Type definition for a property
   // @Input(): to make it public to AppComponent, which uses it in app.component.html, [element]="serverElement"
   @Input('srvElement') element: {type: string, name: string, content: string};
@@ -45,5 +48,13 @@ export class ServerElementComponent implements OnInit, OnChanges, DoCheck, After
 
   ngAfterContentChecked() {
     console.log('ngAfterContentChecked ServerElementComponent called!');
+  }
+
+  ngAfterViewInit() {
+    console.log('ngAfterViewInit ServerElementComponent called!');
+  }
+
+  ngAfterViewChecked() {
+    console.log('ngAfterViewChecked ServerElementComponent called!');
   }
 }
