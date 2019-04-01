@@ -6,7 +6,7 @@ import {
   Component,
   DoCheck,
   Input,
-  OnChanges,
+  OnChanges, OnDestroy,
   OnInit,
   SimpleChanges,
   ViewEncapsulation
@@ -19,7 +19,7 @@ import {
   encapsulation: ViewEncapsulation.Emulated
 })
 export class ServerElementComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked,
-  AfterViewInit, AfterViewChecked {
+  AfterViewInit, AfterViewChecked, OnDestroy {
   // Type definition for a property
   // @Input(): to make it public to AppComponent, which uses it in app.component.html, [element]="serverElement"
   @Input('srvElement') element: {type: string, name: string, content: string};
@@ -56,5 +56,9 @@ export class ServerElementComponent implements OnInit, OnChanges, DoCheck, After
 
   ngAfterViewChecked() {
     console.log('ngAfterViewChecked ServerElementComponent called!');
+  }
+
+  ngOnDestroy() {
+    console.log('ngOnDestroy ServerElementComponent called!');
   }
 }
