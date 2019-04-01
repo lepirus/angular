@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -6,14 +6,23 @@ import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
   styleUrls: ['./server-element.component.css'],
   encapsulation: ViewEncapsulation.Emulated
 })
-export class ServerElementComponent implements OnInit {
+export class ServerElementComponent implements OnInit, OnChanges {
   // Type definition for a property
   // @Input(): to make it public to AppComponent, which uses it in app.component.html, [element]="serverElement"
   @Input('srvElement') element: {type: string, name: string, content: string};
+  @Input() name: string;
 
-  constructor() { }
+  constructor() {
+    console.log('Constructor ServerElementComponent called!');
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('ngOnChanges ServerElementComponent called!');
+    console.log(changes);
+  }
 
   ngOnInit() {
+    console.log('ngOnInit ServerElementComponent called!');
   }
 
 }
