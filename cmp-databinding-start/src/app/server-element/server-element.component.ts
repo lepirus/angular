@@ -1,4 +1,13 @@
-import {Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges, ViewEncapsulation} from '@angular/core';
+import {
+  AfterContentInit,
+  Component,
+  DoCheck,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+  ViewEncapsulation
+} from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -6,7 +15,7 @@ import {Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges, ViewEncapsu
   styleUrls: ['./server-element.component.css'],
   encapsulation: ViewEncapsulation.Emulated
 })
-export class ServerElementComponent implements OnInit, OnChanges, DoCheck {
+export class ServerElementComponent implements OnInit, OnChanges, DoCheck, AfterContentInit {
   // Type definition for a property
   // @Input(): to make it public to AppComponent, which uses it in app.component.html, [element]="serverElement"
   @Input('srvElement') element: {type: string, name: string, content: string};
@@ -27,5 +36,9 @@ export class ServerElementComponent implements OnInit, OnChanges, DoCheck {
 
   ngDoCheck() {
     console.log('ngDoCheck ServerElementComponent called!');
+  }
+
+  ngAfterContentInit() {
+    console.log('ngAfterContentInit ServerElementComponent called!');
   }
 }
