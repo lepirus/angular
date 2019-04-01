@@ -8,6 +8,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 export class GameControlComponent implements OnInit {
   @Output() eventFired = new EventEmitter<number>();
   cont = 0;
+  interval;
 
   constructor() { }
 
@@ -16,11 +17,15 @@ export class GameControlComponent implements OnInit {
 
   onStartSelected() {
     console.log('onStartSelected method!');
-    setInterval(() => {
+    this.interval = setInterval(() => {
       this.cont++;
       this.eventFired.emit(this.cont);
       console.log('Cont: ' + this.cont);
       }, 1000);
+  }
+
+  onPauseSelected() {
+    clearInterval(this.interval);
   }
 
 }
