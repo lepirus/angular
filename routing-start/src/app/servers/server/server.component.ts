@@ -14,15 +14,12 @@ export class ServerComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-    const id = +this.route.snapshot.params['id'];
+    const id = +this.route.snapshot.params['id'];   // + -> to get a number not a string
     this.server = this.serversService.getServer(id);
-    console.log('server.id: ' + this.server.id);
-    console.log('server.name: ' + this.server.name);
-    console.log('server.status: ' + this.server.status);
 
     this.route.params.subscribe(
       (params: Params) => {
-        this.server = this.serversService.getServer(params['id']);
+        this.server = this.serversService.getServer(+params['id']);
       }
     );
   }
