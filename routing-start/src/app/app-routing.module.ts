@@ -32,6 +32,8 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [
+    // RouterModule.forRoot(appRoutes, {useHash: true})
+    // Hashtag between like: http://localhost:4200/#/ -> informs to web server to only care about the part after
     RouterModule.forRoot(appRoutes)
   ],
   exports: [RouterModule]
