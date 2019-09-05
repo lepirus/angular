@@ -8,8 +8,8 @@ import {ShoppingListService} from '../shopping-list.service';
   styleUrls: ['./shopping-edit.component.css']
 })
 export class ShoppingEditComponent implements OnInit {
-  @ViewChild('nameInput') nameInputRef: ElementRef;
-  @ViewChild('amountInput') amountInputRef: ElementRef;
+  @ViewChild('nameInput', { static: true }) nameInputRef: ElementRef;
+  @ViewChild('amountInput', { static: true }) amountInputRef: ElementRef;
 
   constructor(private shoppingListService: ShoppingListService) { }
 
