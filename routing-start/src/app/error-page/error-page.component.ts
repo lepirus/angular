@@ -12,8 +12,8 @@ export class ErrorPageComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.errorMessage = this.route.snapshot.data['message'];
-    this.route.data.subscribe(
+    // this.errorMessage = this.route.snapshot.data['message'];   // Solution 1
+    this.route.data.subscribe(                                    // Solution 2. BEST
       (data: Data) => {
         this.errorMessage = data['message'];
       }
