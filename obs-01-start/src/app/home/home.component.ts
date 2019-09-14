@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       let count = 0;
       setInterval(() => {
         observer.next(count);
-        if (count === 2) {
+        if (count === 5) {
           observer.complete();
         }
         if (count > 3) {
@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
 
     this.firstObsSubscription = customIntervalObservable.subscribe(data => {
-      console.log(data);
+      console.log('Round: ' + (data + 1));
     }, error => {
       console.log(error);
       alert(error.message);
