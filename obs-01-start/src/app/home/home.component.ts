@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from "rxjs/internal/Subscription";
-import { Observable } from "rxjs/internal/Observable";
-import { Observer } from "rxjs/internal/types";
+import { Subscription } from 'rxjs/internal/Subscription';
+import { Observable } from 'rxjs/internal/Observable';
+import { Observer } from 'rxjs/internal/types';
 
 @Component({
   selector: 'app-home',
@@ -22,13 +22,16 @@ export class HomeComponent implements OnInit, OnDestroy {
       let count = 0;
       setInterval(() => {
         observer.next(count);
+        if (count > 3) {
+          observer.error(new Error('Count is greater 3!'));
+        }
         count++;
       }, 1000);
     });
 
     this.firstObsSubscription = customIntervalObservable.subscribe(data => {
       console.log(data);
-    })
+    });
   }
 
   ngOnDestroy(): void {
