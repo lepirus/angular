@@ -8,7 +8,8 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent {
   @ViewChild('formLogin', {static: false}) loginForm: NgForm;
-  defaultSubscription = 'advanced';
+  defaultSubscription = 'Advanced';
+  subscriptionsSelect = ['Basic', 'Advanced', 'Pro'];
 
   onSubmit() {
     console.log(this.loginForm);
