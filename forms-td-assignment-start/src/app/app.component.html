@@ -13,6 +13,50 @@
            Upon submitting the form, you should simply print the Value of the Form to the Console.
            Optionally, display it in your template.
       -->
+      <form (ngSubmit)="onSubmit()" #formLogin="ngForm">
+        <div class="form-group">
+          <label for="email">Mail:</label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            ngModel
+            name="email"
+            required
+            email
+            #email="ngModel">
+          <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+        </div>
+        <div class="form-group">
+          <label for="subscriptions">Subscriptions:</label>
+          <select
+            id="subscriptions"
+            class="form-control"
+            [ngModel]="defaultSubscription"
+            name="subscriptions">
+            <option value="basic">Basic</option>
+            <option value="advanced">Advanced</option>
+            <option value="pro">Pro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            ngModel
+            name="password"
+            required
+            #password="ngModel">
+          <span class="help-block" *ngIf="!password.valid && password.touched">Please enter a password!</span>
+        </div>
+        <p *ngIf="!formLogin.valid && formLogin.touched">Form is invalid!</p>
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="!formLogin.valid">Submit</button>
+      </form>
     </div>
   </div>
 </div>
