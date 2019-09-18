@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CustomValidators } from './custom-validators';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.projectForm = new FormGroup({
-      'projectName': new FormControl(null, [Validators.required, this.forbiddenProjectNames.bind(this)]),
+      'projectName': new FormControl(null, [Validators.required, CustomValidators.forbiddenProjectNames.bind(this)]),
       'email': new FormControl(null, [Validators.required, Validators.email]),
       'projectStatus': new FormControl('critical')
     });
@@ -20,13 +21,6 @@ export class AppComponent implements OnInit {
 
   onSubmit() {
     console.log(this.projectForm.value);
-  }
-
-  forbiddenProjectNames(control: FormControl): {[s: string]: boolean} {
-    if (control.value === 'Test') {
-      return {'projectIsForbidden': true};
-    }
-    return null;
   }
 
 }
