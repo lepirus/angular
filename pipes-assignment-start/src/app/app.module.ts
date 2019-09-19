@@ -4,10 +4,14 @@ import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
+import { ReversePipe } from './reverse.pipe';
+import { ShortPipe } from './short.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ReversePipe,
+    ShortPipe
   ],
   imports: [
     BrowserModule,
