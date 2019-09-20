@@ -20,7 +20,7 @@ export class PostsService {
       });
   }
 
-  fectchPosts() {
+  fetchPosts() {
     return this.http.get<{[key: string]: Post }>('https://ng-complete-guide-c658a.firebaseio.com/posts.json')
       .pipe(map(responseData => {
         const postsArray: Post[] = [];
