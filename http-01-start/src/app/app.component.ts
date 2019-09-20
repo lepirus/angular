@@ -50,9 +50,7 @@ export class AppComponent implements OnInit {
         return postsArray;
       }))
       .subscribe(posts => {
-      console.log(posts);
-      console.log(posts[0].id + ': ' + posts[0].title + ', ' + posts[0].content);
-      console.log(posts[1].id + ': ' + posts[1].title + ', ' + posts[1].content);
+      this.loadedPosts = posts;
     });
   }
 }
