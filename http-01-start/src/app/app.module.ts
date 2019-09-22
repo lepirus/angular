@@ -12,12 +12,12 @@ import { LoggingInterceptorService } from './logging-interceptor.service';
   imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [{
     provide: HTTP_INTERCEPTORS,
-    useClass: AuthInterceptorService,
+    useClass: LoggingInterceptorService,
     multi: true
   },
   {
     provide: HTTP_INTERCEPTORS,
-    useClass: LoggingInterceptorService,
+    useClass: AuthInterceptorService,
     multi: true
   }],
   bootstrap: [AppComponent]
