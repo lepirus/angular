@@ -51,6 +51,11 @@ import { PlaceholderDirective } from './shared/placeholder/placeholder.directive
   providers: [ShoppingListService, RecipeService,
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    AlertComponent
+  ]
+//  entryComponents: say Angular components that will eventually need to be created without a selector or the
+//  route config being used, that is, components programmatically
 })
 export class AppModule { }
