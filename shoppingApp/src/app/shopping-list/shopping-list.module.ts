@@ -16,10 +16,6 @@ import { CommonModule } from '@angular/common';
     RouterModule.forChild([
       { path: 'shopping-list', component: ShoppingListComponent },
     ])
-  ],
-  exports: [
-    ShoppingListComponent,
-    ShoppingEditComponent
   ]
 })
 export class ShoppingListModule {
