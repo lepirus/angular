@@ -9,9 +9,6 @@ module.exports = {
     // This is our Express server for Dynamic universal
     server: './server.ts'
   },
-  externals: {
-    './dist/server/main': 'require("./server/main")'
-  },
   target: 'node',
   resolve: { extensions: ['.ts', '.js'] },
   optimization: {
@@ -23,7 +20,6 @@ module.exports = {
     filename: '[name].js'
   },
   module: {
-    noParse: /polyfills-.*\.js/,
     rules: [
       { test: /\.ts$/, loader: 'ts-loader' },
       {
