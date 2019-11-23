@@ -32,7 +32,9 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
       })),
       transition('normal => highlighted', animate(300)),
       transition('highlighted => normal', animate(800)),
-      transition('shrunken <=> *', animate(500))
+      transition('shrunken <=> *', animate(500, style({
+        borderRadius: '50px'
+      })))
     ])
   ]
 })
