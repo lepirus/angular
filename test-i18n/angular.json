@@ -9,6 +9,11 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "locales": {
+          "es": "src/locale/messages.es.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -56,6 +61,9 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "es": {
+              "localize": ["es"]
             }
           }
         },
@@ -67,6 +75,9 @@
           "configurations": {
             "production": {
               "browserTarget": "test-i18n:build:production"
+            },
+            "es": {
+              "browserTarget": "test-i18n:build:es"
             }
           }
         },
