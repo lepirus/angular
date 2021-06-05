@@ -1,0 +1,17 @@
+# Ultima layout
+
+Here you find the Ultima code for documentation purposes. The code you'll find in this project is the code Primetek delivers.
+
+WARNING: It's not meant to be the basis for a new project!
+
+# Upgrade guide (for masters only)
+
+. Download the ZIP file from the Primetek store.
+. Delete all te contents from this project except for
+** .gitignore
+** README.adoc
+** .idea
+** .git
+. Open the ZIP file & copy all the files (except .sass-cache or MacOSX specific directories) to this project
+. Commit and push
+. Make a new tag with the appropriate version.
