@@ -120,7 +120,7 @@ export class AppConfigComponent implements OnInit {
 
     themes: any[];
 
-    themeColor = 'purple-cyan';
+    themeColor = 'dark-green';
 
     constructor(public app: AppMainComponent) {}
 
@@ -139,7 +139,6 @@ export class AppConfigComponent implements OnInit {
             {image: 'cyan-amber', label: 'cyan'},
             {image: 'grey-deeporange', label: 'grey'}
         ];
-        this.changeTheme(this.themeColor);
     }
 
     changeTheme(theme) {
