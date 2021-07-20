@@ -1,5 +1,5 @@
 <div class="container mt-4">
-  <h3>{{ texto}}</h3>
+  <input class="form-control" placeholder="Escriba algo aqui" [(ngModel)]="texto">
   <br>
-  <button class="btn btn-primary" (click)="cambiarTexto()">Click me</button>
+  {{ texto }}
 </div>
