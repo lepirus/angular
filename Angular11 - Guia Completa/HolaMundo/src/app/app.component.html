@@ -1,6 +1,9 @@
 <div class="container mt-4">
   <div class="row">
-    <h3>Mi nombre es {{ nombre }}</h3>
     <p>La suma de 10 + 15 = {{ getSuma(10, 15) }}</p>
+    <br>
+    <input type="text" class="form-control" [placeholder]="textoPlaceholder" [disabled]="deshabilitado">
+    <img [src]="imageSrc"
+         alt="Imagen ejemplo">
   </div>
 </div>
