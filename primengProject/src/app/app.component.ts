@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'primengProject';
+
+  items: MenuItem[] = [
+    {label: 'Home', icon: 'pi pi-fw pi-home', routerLink: ['/home']},
+    {label: 'Calendar', icon: 'pi pi-fw pi-calendar', routerLink: ['/calendar']},
+    {label: 'Edit', icon: 'pi pi-fw pi-pencil', routerLink: ['/edit']}
+  ];
+
 }
