@@ -75,7 +75,8 @@
               "browserTarget": "primengProject:build:production"
             },
             "development": {
-              "browserTarget": "primengProject:build:development"
+              "browserTarget": "primengProject:build:development",
+              "port": 4201
             }
           },
           "defaultConfiguration": "development"
