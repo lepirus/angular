@@ -9,6 +9,13 @@ export class CustomerService {
 
   constructor(private http: HttpClient) { }
 
+  getCustomersLarge() {
+    return this.http.get<any>('assets/customers-large.json')
+      .toPromise()
+      .then(res => <Customer[]>res.data)
+      .then(data => { return data; });
+  }
+
   getCustomersSmall() {
     return this.http.get<any>('assets/customers-small.json')
       .toPromise()
@@ -18,13 +25,6 @@ export class CustomerService {
 
   getCustomersMedium() {
     return this.http.get<any>('assets/customers-medium.json')
-      .toPromise()
-      .then(res => <Customer[]>res.data)
-      .then(data => { return data; });
-  }
-
-  getCustomersLarge() {
-    return this.http.get<any>('assets/customers-large.json')
       .toPromise()
       .then(res => <Customer[]>res.data)
       .then(data => { return data; });

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +6,10 @@ import { MenuItem } from 'primeng/api';
 })
 export class AppComponent {
 
-  items: MenuItem[] = [
-    {label: 'Home', icon: 'pi pi-fw pi-home', routerLink: ['/home']},
-    {label: 'Calendar', icon: 'pi pi-fw pi-calendar', routerLink: ['/calendar']},
-    {label: 'Edit', icon: 'pi pi-fw pi-pencil', routerLink: ['/edit']}
-  ];
+  // items: MenuItem[] = [
+  //   {label: 'Home', icon: 'pi pi-fw pi-home', routerLink: ['/home']},
+  //   {label: 'Calendar', icon: 'pi pi-fw pi-calendar', routerLink: ['/calendar']},
+  //   {label: 'Edit', icon: 'pi pi-fw pi-pencil', routerLink: ['/edit']},
+  // ];
 
 }
